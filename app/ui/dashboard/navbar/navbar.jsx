@@ -1,11 +1,13 @@
 "use client";
 import { usePathname } from "next/navigation";
 import styles from "../navbar/navbar.module.css";
+import Link from "next/link";
 import {
   MdNotifications,
   MdOutlineChat,
   MdPublic,
   MdSearch,
+  MdLogout,
 } from "react-icons/md";
 const Navbar = () => {
   const pathname = usePathname();
@@ -22,6 +24,12 @@ const Navbar = () => {
           <MdNotifications size={20} />
           <MdPublic size={20} />
         </div>
+        <Link href="/login">
+          <div className={styles.logout}>
+            <MdLogout />
+            Logout
+          </div>
+        </Link>
       </div>
     </div>
   );

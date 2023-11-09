@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../sidebar/sidebar.module.css";
+import Link from "next/link";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -10,7 +11,7 @@ import {
   MdPeople,
   MdOutlineSettings,
   MdHelpCenter,
-  MdLogout,
+  MdLogin,
 } from "react-icons/md";
 import MenuLink from "./menuLink/menuLink";
 
@@ -103,10 +104,12 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-      <div className={styles.logout}>
-        <MdLogout />
-        Logout
-      </div>
+      <Link href="/login">
+        <div className={styles.logout}>
+          <MdLogin />
+          Login
+        </div>
+      </Link>
     </div>
   );
 };
